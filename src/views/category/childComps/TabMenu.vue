@@ -15,26 +15,26 @@
 <script>
   import Scroll from 'components/common/scroll/Scroll'
 
-	export default {
-		name: "TabMenu",
+  export default {
+    name: "TabMenu",
     components: {
-		  Scroll
+      Scroll
     },
     props: {
-		  categories: Array
+      categories: Array
     },
     data() {
-		  return {
-		    currentIndex: 0
+      return {
+        currentIndex: 0
       }
     },
     methods: {
-		  itemClick(index) {
+      itemClick(index) {
         this.currentIndex = index
         this.$emit('selectItem', index)
       }
     }
-	}
+  }
 </script>
 
 <style scoped>

@@ -21,30 +21,28 @@
 </template>
 
 <script>
-export default {
-  name: 'DetailBaseInfo',
-  props:{
+  export default {
+    name: 'DetailBaseInfo',
+    props: {
       goods: {
-          type: Object,
-          default(){
-              return {}
-          }
+        type: Object,
+        default() {
+          return {}
+        }
       }
-  },
-  filters:{
-      Imgfilter: function(value){
-          return "http:" + value
+    },
+    filters: {
+      Imgfilter: function (value) {
+        return "http:" + value
       }
-  },
-  data() { 
-    return {
-
-    }
-  },
-  created(){
+    },
+    data() {
+      return {}
+    },
+    created() {
       //console.log(this.goods);
+    }
   }
- }
 </script>
 
 
@@ -93,7 +91,7 @@ export default {
     line-height: 30px;
     display: flex;
     font-size: 13px;
-    border-bottom: 1px solid rgba(100,100,100,.1);
+    border-bottom: 1px solid rgba(100, 100, 100, .1);
     justify-content: space-between;
   }
 

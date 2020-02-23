@@ -3,19 +3,19 @@ import Toast from './Toast';
 const obj = {};
 
 obj.install = function (Vue) {
-    //1.创建组件构造器
-    const toastConstrustor = Vue.extend(Toast);
+  //1.创建组件构造器
+  const toastConstrustor = Vue.extend(Toast);
 
-    //2.new的方式, 根据组件构造器
-    const toast = new toastConstrustor();
+  //2.new的方式, 根据组件构造器
+  const toast = new toastConstrustor();
 
-    //3.将组件对象，手动挂载到某一个元素上
-    toast.$mount(document.createElement('div'));
+  //3.将组件对象，手动挂载到某一个元素上
+  toast.$mount(document.createElement('div'));
 
-    //4.toast.$el对应的就是div
-    document.body.appendChild(toast.$el);
+  //4.toast.$el对应的就是div
+  document.body.appendChild(toast.$el);
 
-    Vue.prototype.$toast = toast;
+  Vue.prototype.$toast = toast;
 }
 
 export default obj

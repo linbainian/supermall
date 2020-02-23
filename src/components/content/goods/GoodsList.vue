@@ -1,5 +1,5 @@
 <template>
-  <div class="goods" >
+  <div class="goods">
     <goods-list-item v-for="item in goods" :product="item" :key="item.id"/>
   </div>
 </template>
@@ -20,12 +20,12 @@
         }
       }
     },
-    methods:{
-      itemClick(){
+    methods: {
+      itemClick() {
         this.$router.push('/detail');
       }
     },
-    
+
   }
 </script>
 

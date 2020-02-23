@@ -22,14 +22,14 @@
 </template>
 
 <script>
-	export default {
-		name: "DetailBottomBar",
+  export default {
+    name: "DetailBottomBar",
     methods: {
       addToCart() {
         this.$emit('addToCart')
       }
     }
-	}
+  }
 </script>
 
 <style scoped>
@@ -50,7 +50,7 @@
     display: flex;
   }
 
-  .bar-item>div {
+  .bar-item > div {
     flex: 1;
   }
 
@@ -67,11 +67,11 @@
   }
 
   .bar-left .service {
-    background-position:0 -54px;
+    background-position: 0 -54px;
   }
 
   .bar-left .shop {
-    background-position:0 -98px;
+    background-position: 0 -98px;
   }
 
   .bar-right {

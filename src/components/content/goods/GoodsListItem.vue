@@ -1,7 +1,7 @@
 <template>
   <div class="goods-item" @click="itemClick">
     <img v-lazy="showImage" alt="" @load="imgLoad">
-    <div class="goods-info" >
+    <div class="goods-info">
       <p>{{product.title}}</p>
       <span class="price">{{product.price}}</span>
       <span class="collect">{{product.cfav}}</span>
@@ -20,16 +20,16 @@
         }
       }
     },
-    created(){
+    created() {
       //console.log(this.product)
     },
-    computed:{
-      showImage(){
+    computed: {
+      showImage() {
         return this.product.img || this.product.image || this.product.show.img;
       }
     },
-    methods:{
-      imgLoad(){
+    methods: {
+      imgLoad() {
         this.$bus.$emit('itemImageLoad');
 
         // if(this.$route.path.indexOf('/home')){
@@ -38,7 +38,7 @@
         //   this.$bus.$emit('detailItemImageLoad');
         // }
       },
-      itemClick(){
+      itemClick() {
         this.$router.push('/detail/' + this.product.iid);
       }
     }

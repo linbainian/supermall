@@ -28,7 +28,7 @@
     name: "ShopCartItem",
     props: {
       itemInfo: Object,
-      default(){
+      default() {
         return {}
       }
     },
@@ -40,11 +40,11 @@
         this.itemInfo.checked = !this.itemInfo.checked;
       }
     },
-    computed:{
-      showImage(){
-          return "http:" + this.itemInfo.image;
+    computed: {
+      showImage() {
+        return "http:" + this.itemInfo.image;
       }
-  },
+    },
   }
 </script>
 
@@ -73,7 +73,7 @@
   .item-img {
     padding: 5px;
     /*border: 1px solid #ccc;*/
-   }
+  }
 
   .item-img img {
     width: 80px;
@@ -106,5 +106,5 @@
 
   .info-bottom .item-price {
     color: orangered;
-  } 
+  }
 </style>

@@ -1,8 +1,8 @@
 const mutations = {
-  addCounter(state, payload){
+  addCounter(state, payload) {
     payload.count++;
   },
-  addToCart(state, payload){
+  addToCart(state, payload) {
     payload.checked = true;
     state.cartList.push(payload);
   }

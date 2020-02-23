@@ -35,36 +35,34 @@
   </div>
 </template>
 <script>
-export default {
-  name: 'DetailShopInfo',
-  props:{
-      shop:{
-          type: Object,
-          default(){
-              return {}
-          }
-      }
-  },
-  data() { 
-    return {
-
-    }
-  },
-  computed:{
-    showImage(){
-        return "http:" + this.shop.logo;
-    }
-  },
-    filters: {
-        sellCountFilter: function (value) {
-        if (value < 10000) return value;
-        return (value/10000).toFixed(1) + '万'
+  export default {
+    name: 'DetailShopInfo',
+    props: {
+      shop: {
+        type: Object,
+        default() {
+          return {}
         }
+      }
     },
-    mounted(){
+    data() {
+      return {}
+    },
+    computed: {
+      showImage() {
+        return "http:" + this.shop.logo;
+      }
+    },
+    filters: {
+      sellCountFilter: function (value) {
+        if (value < 10000) return value;
+        return (value / 10000).toFixed(1) + '万'
+      }
+    },
+    mounted() {
       console.log(this.shop);
     }
- }
+  }
 </script>
 
 
@@ -85,7 +83,7 @@ export default {
     width: 45px;
     height: 45px;
     border-radius: 50%;
-    border: 1px solid rgba(0,0,0,.1);
+    border: 1px solid rgba(0, 0, 0, .1);
   }
 
   .shop-top .title {
@@ -108,7 +106,7 @@ export default {
     justify-content: space-evenly;
     color: #333;
     text-align: center;
-    border-right: 1px solid rgba(0,0,0,.1);
+    border-right: 1px solid rgba(0, 0, 0, .1);
   }
 
   .sells-count, .goods-count {

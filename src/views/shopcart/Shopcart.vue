@@ -12,38 +12,36 @@
 </template>
 
 <script>
-import NavBar from 'components/common/navbar/NavBar';
-import CartList from './childComps/CartList';
-import CartBottomBar from './childComps/CartBottomBar';
+  import NavBar from 'components/common/navbar/NavBar';
+  import CartList from './childComps/CartList';
+  import CartBottomBar from './childComps/CartBottomBar';
 
-import { mapGetters } from 'vuex';
+  import {mapGetters} from 'vuex';
 
 
-export default {
-  name: 'Shopcart',
-  data() { 
-    return {
-
+  export default {
+    name: 'Shopcart',
+    data() {
+      return {}
+    },
+    components: {
+      NavBar,
+      CartList,
+      CartBottomBar
+    },
+    computed: {
+      //mapGetters的第一种用法
+      ...mapGetters(['cartCount']),
+      //第二种用法
+      // ...mapGetters({
+      //   length: 'cartLength',
+      //   list: 'cartList'
+      // })
     }
-  },
-  components:{
-    NavBar,
-    CartList,
-    CartBottomBar
-  },
-  computed:{
-    //mapGetters的第一种用法
-    ...mapGetters(['cartCount']),
-    //第二种用法
-    // ...mapGetters({
-    //   length: 'cartLength',
-    //   list: 'cartList'
-    // })
   }
- }
 </script>
 
-<style  scoped>
+<style scoped>
   #shopcart {
     /*position: relative;*/
     height: 100vh;

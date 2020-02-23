@@ -17,28 +17,26 @@
     <div class="calculate">
         <span class="buy-product">去计算({{checkLength}})</span>
     </div>
-    
+
   </div> -->
 </template>
 
 <script>
-import CheckButton from 'components/content/checkButton/CheckButton';
+  import CheckButton from 'components/content/checkButton/CheckButton';
 
-import { mapGetters } from 'vuex';
+  import {mapGetters} from 'vuex';
 
-export default {
-  name: 'CartBottomBar',
-  data() { 
-    return {
-        
-    }
-  },
-  components:{
+  export default {
+    name: 'CartBottomBar',
+    data() {
+      return {}
+    },
+    components: {
       CheckButton
-  },
-  methods:{
-      checkBtnClick(){
-          // 1.判断是否有未选中的按钮
+    },
+    methods: {
+      checkBtnClick() {
+        // 1.判断是否有未选中的按钮
         let isSelectAll = this.$store.getters.cartList.find(item => !item.checked);
 
         // 2.有未选中的内容, 则全部选中
@@ -52,31 +50,31 @@ export default {
           });
         }
       },
-      calcClick(){
-        if(!this.isSelectAll){
+      calcClick() {
+        if (!this.isSelectAll) {
           this.$toast.show('请选择要购买的商品');
         }
       }
-  },
-  computed:{
+    },
+    computed: {
       ...mapGetters(['cartList']),
-      totalPrice(){
-        
+      totalPrice() {
+
         return '￥' + this.cartList.filter(item => {
           return item.checked
         }).reduce((preValue, item) => {
           return preValue + item.count * item.price
         }, 0).toFixed(2)
       },
-      isSelectAll(){
+      isSelectAll() {
         return this.$store.getters.cartList.find(item => item.checked === false) === undefined;
       },
-      checkLength(){
-          
-          return this.cartList.filter(item => item.checked).length;
+      checkLength() {
+
+        return this.cartList.filter(item => item.checked).length;
       }
+    }
   }
- }
 </script>
 
 <style scoped>
@@ -145,5 +143,5 @@ export default {
     text-align: center;
     line-height: 44px;
     float: right;
-  } 
+  }
 </style>

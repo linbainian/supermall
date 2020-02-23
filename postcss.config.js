@@ -1,9 +1,8 @@
 module.exports = {
   plugins: {
-    autoprefixer: {
-    },
-    "postcss-px-to-viewport":{
-      
+    autoprefixer: {},
+    "postcss-px-to-viewport": {
+
       viewportWidth: 375, //视窗的宽度，对应的是我们设计稿的宽度
       viewportHeight: 667, //视窗的高度, 对应的是设计稿的高度
       unitPrecision: 5, //指定'px'转换为视窗单位值的小数位数

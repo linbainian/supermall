@@ -5,14 +5,12 @@
 </template>
 
 <script>
-export default {
-  name: 'DetailImageInfo',
-  data() { 
-    return {
-
+  export default {
+    name: 'DetailImageInfo',
+    data() {
+      return {}
     }
   }
- }
 </script>
 
 <style lang="" scoped>

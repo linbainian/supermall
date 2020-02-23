@@ -14,30 +14,30 @@ Vue.use(VueRouter)
 
 //2.创建路由对象
 const routes = [
-    {
-        path:'',
-        redirect:'/home'
-    },
-    {
-        path:'/home',
-        component: Home
-    },
-    {
-        path:'/category',
-        component: Category
-    },
-    {
-        path:'/shopcart',
-        component: Shopcart
-    },
-    {
-        path:'/profile',
-        component: Profile
-    },
-    {
-        path:'/detail/:iid',
-        component: Detail
-    }
+  {
+    path: '',
+    redirect: '/home'
+  },
+  {
+    path: '/home',
+    component: Home
+  },
+  {
+    path: '/category',
+    component: Category
+  },
+  {
+    path: '/shopcart',
+    component: Shopcart
+  },
+  {
+    path: '/profile',
+    component: Profile
+  },
+  {
+    path: '/detail/:iid',
+    component: Detail
+  }
 ]
 
 const router = new VueRouter({
@@ -47,12 +47,12 @@ const router = new VueRouter({
 })
 
 router.onError((error) => {
-    const pattern = /Loading chunk (\d)+ failed/g;
-    const isChunkLoadFailed = error.message.match(pattern);
-    const targetPath = router.history.pending.fullPath;
-    if (isChunkLoadFailed) {
+  const pattern = /Loading chunk (\d)+ failed/g;
+  const isChunkLoadFailed = error.message.match(pattern);
+  const targetPath = router.history.pending.fullPath;
+  if (isChunkLoadFailed) {
     router.replace(targetPath);
-    }
+  }
 });
 
 export default router
